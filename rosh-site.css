@@ -126,9 +126,9 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .products .container,.brands-section .container,#industri .container,#faq .container,#testimoni .container,.delivery .container{position:relative;z-index:1;}
 /* Jakarta (Monas) skyline — horizontal strip bridging Industri → Testimoni (cropped to the buildings) */
 #industri{padding-bottom:44px;}
-#testimoni{padding-top:250px;}
-.art-skyline{left:50%;transform:translateX(-50%);top:30px;width:min(1320px,94%);height:230px;opacity:.24;}
-.art-skyline img{width:100%;height:100%;object-fit:cover;object-position:center bottom;}
+#testimoni{padding-top:350px;}
+.art-skyline{left:50%;transform:translateX(-50%);top:20px;width:min(1180px,92%);height:320px;opacity:.28;}
+.art-skyline img{width:100%;height:100%;object-fit:cover;object-position:center center;}
 /* delivery rider — armada internal (kept left so it sits on cream, not behind the navy card) */
 .art-rider{left:1%;bottom:2px;width:300px;opacity:.45;}
 /* packaging stack — large feature bleeding off the right of the products band (~5x) */
