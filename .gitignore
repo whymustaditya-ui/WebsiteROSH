@@ -1,0 +1,11 @@
+# Internal / sensitive — never publish
+uploads/
+.claude/
+
+# Dev & QA artifacts
+screenshots/
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+*.tmp
