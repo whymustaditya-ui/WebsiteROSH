@@ -126,9 +126,10 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .products .container,.brands-section .container,#industri .container,#faq .container,#testimoni .container,.delivery .container{position:relative;z-index:1;}
 /* Jakarta (Monas) skyline — horizontal strip bridging Industri → Testimoni (cropped to the buildings) */
 #industri{padding-bottom:44px;}
-#testimoni{padding-top:350px;}
-.art-skyline{left:50%;transform:translateX(-50%);top:20px;width:min(1180px,92%);height:320px;opacity:.28;}
-.art-skyline img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+/* skyline is full-bleed at natural ratio (~2.21:1 → ~45vw tall); pad content to clear it */
+#testimoni{padding-top:calc(44vw + 36px);}
+.art-skyline{left:0;width:100%;top:0;height:auto;opacity:.3;}
+.art-skyline img{display:block;width:100%;height:auto;}
 /* delivery rider — armada internal (kept left so it sits on cream, not behind the navy card) */
 .art-rider{left:1%;bottom:2px;width:300px;opacity:.45;}
 /* packaging stack — large feature bleeding off the right of the products band (~5x) */
@@ -184,6 +185,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .nav{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);transition:background .25s, box-shadow .25s, padding .25s;}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 28px;max-width:1340px;margin:0 auto;}
 .nav-logo-link{text-decoration:none;display:flex;align-items:center;}
+.nav-logo-img{height:46px;width:auto;display:block;transition:height .25s;}
+.nav.scrolled .nav-logo-img{height:40px;}
 .nav-logo-txt{display:flex;flex-direction:column;line-height:1;gap:2px;}
 .nl-main{font-family:var(--f-display);font-weight:800;font-size:28px;letter-spacing:0.02em;text-transform:uppercase;color:#fff;font-style:italic;padding-bottom:4px;border-bottom:2.5px solid rgba(255,255,255,0.9);}
 .nl-sub{font-family:var(--f-display);font-weight:600;font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-top:3px;}
