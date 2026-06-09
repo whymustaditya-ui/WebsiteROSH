@@ -124,21 +124,21 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .section-art img{display:block;width:100%;height:auto;}
 .products,.brands-section,#industri,#faq,#testimoni{position:relative;overflow:hidden;}
 .products .container,.brands-section .container,#industri .container,#faq .container,#testimoni .container,.delivery .container{position:relative;z-index:1;}
-/* Jakarta (Monas) skyline — horizontal strip bridging Industri → Testimoni (cropped to the buildings) */
-#industri{padding-bottom:44px;}
-/* skyline is full-bleed at natural ratio (~2.21:1 → ~45vw tall); pad content to clear it */
-#testimoni{padding-top:calc(44vw + 36px);}
-.art-skyline{left:0;width:100%;top:0;height:auto;opacity:.3;}
+/* Jakarta (Monas) skyline — full-bleed backdrop behind the Industri cards.
+   Anchored to the section bottom at natural ratio (~2.21:1 → ~45vw tall) so Monas
+   rises up toward the heading while the buildings sit in the floor below the cards. */
+#industri{padding-bottom:18vw;}
+.art-skyline{left:0;bottom:0;width:100%;height:auto;opacity:.28;}
 .art-skyline img{display:block;width:100%;height:auto;}
 /* delivery rider — armada internal (kept left so it sits on cream, not behind the navy card) */
 .art-rider{left:1%;bottom:2px;width:300px;opacity:.45;}
-/* packaging stack — large feature bleeding off the right of the products band (~5x) */
-.art-stack{right:-50px;top:24px;width:min(740px,52%);opacity:.46;}
+/* thinwall stack — tightly-cropped (~1.16:1), sits top-right of the products band */
+.art-stack{right:1%;top:40px;width:min(420px,30%);opacity:.5;}
 /* courier mascot — large, bleeding off the right beside the FAQ (~3x) */
 .art-mascot{right:-70px;top:64px;width:min(620px,42%);opacity:.5;}
-/* two pikulan carriers — full figures walking in a band below the brand cards (~3x) */
-.art-carry{left:0;bottom:18px;width:min(640px,46%);opacity:.42;}
-/* extra floor below the brand cards so the big carriers sit fully on cream, not behind cards */
+/* two pikulan carriers — tightly-cropped (~1.71:1), sit fully in the floor below the brand cards */
+.art-carry{left:2%;bottom:24px;width:min(420px,32%);opacity:.45;}
+/* extra floor below the brand cards so the carriers sit fully on cream, not behind cards */
 .brands-section{padding-bottom:300px;}
 @media (max-width:1024px){ .section-art{display:none;} .brands-section{padding-bottom:96px;} #industri{padding-bottom:72px;} #testimoni{padding-top:84px;} }
 
