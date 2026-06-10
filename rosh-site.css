@@ -131,16 +131,24 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .art-skyline{left:0;bottom:0;width:100%;height:auto;opacity:.28;}
 .art-skyline img{display:block;width:100%;height:auto;}
 /* delivery rider — armada internal (kept left so it sits on cream, not behind the navy card) */
-.art-rider{left:1%;bottom:2px;width:300px;opacity:.45;}
+/* truck parked bottom-right, in the floor below the navy area card; flipped to face left */
+.art-rider{right:3%;bottom:8px;width:min(440px,38%);opacity:.42;}
+.art-rider img{transform:scaleX(-1);}
 /* thinwall stack — tightly-cropped (~1.16:1), sits top-right of the products band */
 .art-stack{right:1%;top:40px;width:min(420px,30%);opacity:.5;}
-/* courier mascot — large, bleeding off the right beside the FAQ (~3x) */
-.art-mascot{right:-70px;top:64px;width:min(620px,42%);opacity:.5;}
-/* two pikulan carriers — tightly-cropped (~1.71:1), sit fully in the floor below the brand cards */
-.art-carry{left:2%;bottom:24px;width:min(420px,32%);opacity:.45;}
-/* extra floor below the brand cards so the carriers sit fully on cream, not behind cards */
-.brands-section{padding-bottom:300px;}
-@media (max-width:1024px){ .section-art{display:none;} .brands-section{padding-bottom:96px;} #industri{padding-bottom:72px;} #testimoni{padding-top:84px;} }
+/* street delivery scene — full-bleed band anchored to the FAQ floor; faint so the
+   accordion text stays readable over the empty sky in the upper part of the image */
+.art-street{left:0;right:0;bottom:-13vw;width:100%;opacity:.22;}
+#faq{padding-bottom:14vw;}
+/* floating packaging clusters flanking the brand cards (portrait line-art, 1024x1536).
+   Big & bold: ~half the illustration tucks BEHIND the outermost card (cards sit
+   above via container z-index), the other half spills into the gutter / off-screen.
+   left offset = container half (600) + half the art width (360) so the inner edge
+   lands roughly at the card's far edge. Hidden on small screens (≤1024) below. */
+.art-float-right{right:calc(50% - 600px - 210px);top:50%;transform:translateY(-50%);width:720px;opacity:.38;}
+/* thinwall cluster on the right of the testimonials section (moved from brands) */
+.art-testi-right{right:calc(50% - 600px - 210px);top:50%;transform:translateY(-50%);width:720px;opacity:.38;}
+@media (max-width:1024px){ .section-art{display:none;} .brands-section{padding-bottom:96px;} #industri{padding-bottom:72px;} #testimoni{padding-top:84px;} .delivery{padding-bottom:64px;} }
 
 .container{max-width:var(--container);margin:0 auto;padding:0 28px;}
 .section{padding:104px 0 116px;}
@@ -241,17 +249,25 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .hero-stats .container{display:contents;}
 
 /* ---------- trust bar ---------- */
-.trust{background:var(--bg-soft);border-bottom:1px solid var(--line);}
-.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 0;flex-wrap:wrap;}
-.trust-label{font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);}
-.trust-logos{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
-.trust-logos img{filter:saturate(0.2) opacity(0.78);transition:filter .25s;}
-.trust-logos:hover img{filter:saturate(1) opacity(1);}
-.trust-logos span{font-family:var(--f-display);font-weight:700;font-size:21px;color:var(--navy);opacity:0.55;letter-spacing:-0.01em;}
-.trust-badges{display:flex;gap:10px;flex-wrap:wrap;}
-.badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:0.02em;
-  padding:9px 15px;border-radius:9px;background:#fff;border:1px solid var(--line);color:var(--navy);box-shadow:var(--shadow-sm);}
-.badge svg{width:16px;height:16px;color:var(--steel);}
+.trust{background:var(--bg-soft);border-bottom:1px solid var(--line);overflow:hidden;}
+.trust-header{display:flex;align-items:center;justify-content:center;padding:9px 0 4px;}
+.trust-label{font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);white-space:nowrap;}
+/* ticker */
+.trust-ticker{position:relative;overflow:hidden;padding:6px 0 10px;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);}
+.trust-track{display:flex;align-items:center;gap:30px;width:max-content;
+  animation:trust-ticker 24s linear infinite;}
+.trust-ticker:hover .trust-track{animation-play-state:paused;}
+.trust-logo-wrap{display:flex;align-items:center;justify-content:center;width:98px;height:45px;flex-shrink:0;
+  filter:saturate(0) opacity(0.65);transition:filter .3s;}
+.trust-logo-wrap:hover{filter:saturate(1) opacity(1);}
+.trust-logo-wrap img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+.trust-logo-lg{width:146px;height:68px;}
+@keyframes trust-ticker{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
 
 /* ---------- about ---------- */
 .about-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:72px;align-items:center;}
@@ -283,7 +299,11 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .brand-card:hover,.prod-card:hover,.ind-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-d);}
 
 /* ---------- brands section ---------- */
-.brands-section{background:var(--bg-soft);}
+.brands-section{background:var(--bg-soft);padding-bottom:48px;}
+.products{padding-top:48px;padding-bottom:48px;}
+#industri{padding-top:48px;}
+#testimoni{padding-top:48px;padding-bottom:48px;}
+.delivery{padding-top:48px;}
 .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .brand-card{border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;}
 /* accent top-line reveal on hover */
@@ -399,7 +419,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .ind-card .tags{margin-top:14px;font-size:13px;color:var(--slate-l);font-weight:500;}
 
 /* ---------- delivery ---------- */
-.delivery{background:var(--bg-soft);position:relative;overflow:hidden;}
+.delivery{background:var(--bg-soft);position:relative;overflow:hidden;padding-bottom:100px;}
 .del-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 .del-feats{display:flex;flex-direction:column;gap:20px;margin-top:34px;}
 .del-feat{display:flex;gap:18px;align-items:flex-start;}
@@ -515,7 +535,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
   .prod-grid{grid-template-columns:1fr;}
   .ind-grid{grid-template-columns:1fr;}
   .about-mini{gap:12px;}
-  .trust-inner{justify-content:flex-start;}
+  .trust-header{justify-content:flex-start;}
   .foot-top{grid-template-columns:1fr;}
   .foot-bottom{flex-direction:column;align-items:flex-start;}
   .fab span.txt{display:none;}

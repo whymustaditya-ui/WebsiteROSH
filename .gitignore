@@ -9,3 +9,4 @@ screenshots/
 Thumbs.db
 .DS_Store
 *.tmp
+.gstack/
