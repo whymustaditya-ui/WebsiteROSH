@@ -3,6 +3,8 @@
 Landing page resmi **ROSH Plastic**, distributor kemasan plastik *food grade* untuk bisnis F&B di Indonesia. Situs ini menampilkan profil perusahaan, katalog produk, brand yang didistribusikan, area pengiriman, dan kanal kontak (WhatsApp).
 
 > PT Roshan Strategi Nusantara · Jakarta Utara
+>
+> 🌐 Live di **[roshplastic.id](https://roshplastic.id)**
 
 ---
 
@@ -22,7 +24,7 @@ ROSH Plastic adalah distributor wholesale kemasan plastik food grade — melayan
 
 Situs statis tanpa framework — ringan dan mudah di-deploy ke hosting statis mana pun.
 
-- **HTML5** — `ROSH Plastic.html` (single-page, section-based)
+- **HTML5** — `index.html` (single-page, section-based)
 - **CSS3** — `rosh-site.css` (custom properties, grid/flex, animasi reveal)
 - **Vanilla JS** — `rosh-site.js` (mobile menu, accordion FAQ, scroll reveal)
 - **Google Fonts** — Bricolage Grotesque, Caveat, Plus Jakarta Sans
@@ -33,9 +35,10 @@ Situs statis tanpa framework — ringan dan mudah di-deploy ke hosting statis ma
 
 ```
 WebsiteROSH/
-├── ROSH Plastic.html      # Halaman utama (semua section)
+├── index.html             # Halaman utama (semua section) — entry point GitHub Pages
 ├── rosh-site.css          # Seluruh styling
 ├── rosh-site.js           # Interaksi (nav, FAQ, reveal)
+├── CNAME                  # Custom domain (roshplastic.id) — JANGAN dihapus
 ├── assets/                # Gambar, logo brand, video produk
 ├── design-canvas.jsx      # File desain / referensi layout
 ├── rosh-heroes.jsx        # Varian hero (desain)
@@ -53,12 +56,47 @@ Cukup buka file HTML di browser:
 
 ```bash
 # Opsi 1 — buka langsung
-start "ROSH Plastic.html"
+start index.html
 
 # Opsi 2 — local server (disarankan, agar font & asset termuat penuh)
 python -m http.server 8000
-# lalu buka http://localhost:8000/ROSH%20Plastic.html
+# lalu buka http://localhost:8000/
 ```
+
+---
+
+## Deployment
+
+Hosting **nol rupiah** lewat **GitHub Pages**. Satu-satunya biaya = domain `.id` (~Rp200rb/tahun).
+
+- **Repo:** `whymustaditya-ui/WebsiteROSH` (branch `main`)
+- **Source:** GitHub Pages → Deploy from branch `main` / `(root)`
+- **Entry file:** `index.html`
+- **Live di:** https://roshplastic.id (`www.roshplastic.id` → redirect ke non-www)
+- **HTTPS:** Enforce HTTPS ON (sertifikat SSL otomatis dari GitHub)
+- Push ke `main` = auto-deploy via workflow *pages build and deployment*.
+
+### Custom domain
+
+- **Registrar:** Hostinger. Domain `roshplastic.id`, auto-renewal ON.
+- **Nameserver:** tetap Hostinger — DNS diatur di hPanel (bukan ganti NS).
+- **DNS records:**
+
+  | Type  | Name  | Value                        |
+  |-------|-------|------------------------------|
+  | A     | `@`   | `185.199.108.153`            |
+  | A     | `@`   | `185.199.109.153`            |
+  | A     | `@`   | `185.199.110.153`            |
+  | A     | `@`   | `185.199.111.153`            |
+  | CNAME | `www` | `whymustaditya-ui.github.io` |
+
+  Empat A record ke IP GitHub itu disengaja (round-robin/redundancy).
+
+### ⚠️ Aturan penting
+
+- **JANGAN hapus file `CNAME`** (isi: `roshplastic.id`). Hilang dari sebuah push → custom domain ke-reset ke `whymustaditya-ui.github.io`. Selalu `git pull` setelah GitHub bikin/ubah CNAME.
+- **JANGAN ubah** keempat A record + CNAME `www` di Hostinger — itu yang nyambungin domain ke GitHub.
+- **Jangan ganti nameserver** ke selain Hostinger.
 
 ---
 
