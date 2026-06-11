@@ -132,7 +132,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .art-skyline img{display:block;width:100%;height:auto;}
 /* delivery rider — armada internal (kept left so it sits on cream, not behind the navy card) */
 /* truck parked bottom-right, in the floor below the navy area card; flipped to face left */
-.art-rider{right:3%;bottom:8px;width:min(440px,38%);opacity:.42;}
+.art-rider{right:1%;bottom:8px;width:min(440px,38%);opacity:.42;}
 .art-rider img{transform:scaleX(-1);}
 /* thinwall stack — tightly-cropped (~1.16:1), sits top-right of the products band */
 .art-stack{right:1%;top:40px;width:min(420px,30%);opacity:.5;}
