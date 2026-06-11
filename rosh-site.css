@@ -147,7 +147,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
    lands roughly at the card's far edge. Hidden on small screens (≤1024) below. */
 .art-float-right{right:calc(50% - 600px - 210px);top:50%;transform:translateY(-50%);width:720px;opacity:.38;}
 /* thinwall cluster on the right of the testimonials section (moved from brands) */
-.art-testi-right{right:calc(50% - 600px - 210px);top:50%;transform:translateY(-50%);width:720px;opacity:.38;}
+.art-testi-right{right:calc(50% - 600px - 150px);top:50%;transform:translateY(-50%);width:480px;opacity:.38;}
 @media (max-width:1024px){ .section-art{display:none;} .brands-section{padding-bottom:96px;} #industri{padding-bottom:72px;} #testimoni{padding-top:84px;} .delivery{padding-bottom:64px;} }
 
 .container{max-width:var(--container);margin:0 auto;padding:0 28px;}
