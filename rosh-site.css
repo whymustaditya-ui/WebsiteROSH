@@ -302,7 +302,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .brands-section{background:var(--bg-soft);padding-bottom:48px;}
 .products{padding-top:48px;padding-bottom:48px;}
 #industri{padding-top:48px;}
-#testimoni{padding-top:48px;padding-bottom:48px;}
+#testimoni{padding-top:140px;padding-bottom:130px;}
 .delivery{padding-top:48px;}
 .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .brand-card{border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;}
