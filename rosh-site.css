@@ -256,7 +256,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .trust-ticker{position:relative;overflow:hidden;padding:6px 0 10px;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
   mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);}
-.trust-track{display:flex;align-items:center;gap:64px;width:max-content;
+.trust-track{display:flex;align-items:center;gap:90px;width:max-content;
   animation:trust-ticker 24s linear infinite;}
 .trust-ticker:hover .trust-track{animation-play-state:paused;}
 .trust-logo-wrap{display:flex;align-items:center;justify-content:center;height:68px;flex-shrink:0;
