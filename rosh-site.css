@@ -259,11 +259,19 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .trust-track{display:flex;align-items:center;gap:30px;width:max-content;
   animation:trust-ticker 24s linear infinite;}
 .trust-ticker:hover .trust-track{animation-play-state:paused;}
-.trust-logo-wrap{display:flex;align-items:center;justify-content:center;width:98px;height:45px;flex-shrink:0;
+.trust-logo-wrap{display:flex;align-items:center;justify-content:center;height:68px;flex-shrink:0;
   filter:saturate(0) opacity(0.65);transition:filter .3s;}
 .trust-logo-wrap:hover{filter:saturate(1) opacity(1);}
-.trust-logo-wrap img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.2);transform-origin:center;}
-.trust-logo-lg{width:146px;height:68px;}
+.trust-logo-wrap img{width:auto;height:42px;max-width:none;max-height:none;object-fit:contain;display:block;}
+/* per-logo optical sizing — logo sudah di-trim ke konten, jadi height = tinggi visual */
+.trust-track .tl-tongtji{height:46px;}
+.trust-track .tl-acaii{height:34px;}
+.trust-track .tl-arka{height:48px;}
+.trust-track .tl-gion{height:48px;}
+.trust-track .tl-katsukita{height:46px;}
+.trust-track .tl-wnk{height:42px;}
+.trust-track .tl-ranch{height:36px;}
+.trust-track .tl-totalbuah{height:44px;}
 @keyframes trust-ticker{
   from{transform:translateX(0);}
   to{transform:translateX(-50%);}
