@@ -262,7 +262,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
 .trust-logo-wrap{display:flex;align-items:center;justify-content:center;width:98px;height:45px;flex-shrink:0;
   filter:saturate(0) opacity(0.65);transition:filter .3s;}
 .trust-logo-wrap:hover{filter:saturate(1) opacity(1);}
-.trust-logo-wrap img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+.trust-logo-wrap img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.2);transform-origin:center;}
 .trust-logo-lg{width:146px;height:68px;}
 @keyframes trust-ticker{
   from{transform:translateX(0);}
