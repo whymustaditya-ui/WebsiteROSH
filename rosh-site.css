@@ -257,13 +257,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.faq-q:focus-visible{
   -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
   mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);}
 .trust-track{display:flex;align-items:center;gap:90px;width:max-content;
-  animation:trust-ticker 24s linear infinite;}
+  animation:trust-ticker 33s linear infinite;}
 .trust-ticker:hover .trust-track{animation-play-state:paused;}
 .trust-logo-wrap{display:flex;align-items:center;justify-content:center;height:68px;flex-shrink:0;
   filter:saturate(0) opacity(0.65);transition:filter .3s;}
 .trust-logo-wrap:hover{filter:saturate(1) opacity(1);}
 .trust-logo-wrap img{width:auto;height:42px;max-width:none;max-height:none;object-fit:contain;display:block;}
 /* per-logo optical sizing — logo sudah di-trim ke konten, jadi height = tinggi visual */
+.trust-track .tl-hachigrill{height:52px;}
+.trust-track .tl-shabuhachi{height:50px;}
+.trust-track .tl-dearclio{height:34px;}
 .trust-track .tl-tongtji{height:46px;}
 .trust-track .tl-acaii{height:34px;}
 .trust-track .tl-arka{height:48px;}
